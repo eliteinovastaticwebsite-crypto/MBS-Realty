@@ -333,18 +333,13 @@ export function Navbar() {
                 )}
               </button>
               
-              {/* CTA Button */}
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <button
                   onClick={handleScheduleTour}
-                  className={`px-6 py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg focus:outline-none ${
-                    shouldUseLightText
-                      ? "bg-white text-gray-900 hover:bg-gray-100"
-                      : "bg-gradient-to-r from-blue-600 to-purple-600 text-white hover:from-blue-700 hover:to-purple-700"
-                  }`}
+                  className="px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-semibold transition-all duration-300 shadow-lg hover:from-blue-700 hover:to-purple-700 focus:outline-none"
                 >
                   Schedule Appointment
                 </button>
