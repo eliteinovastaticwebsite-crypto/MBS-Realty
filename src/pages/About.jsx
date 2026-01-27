@@ -90,18 +90,9 @@ export default function About() {
         "Expert in property valuation and market analysis with a track record of record-breaking deals.",
       social: ["LinkedIn", "Instagram"],
     },
-    {
-      name: "Emily Rodriguez",
-      role: "Senior Agent",
-      image:
-        "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
-      description:
-        "Luxury homes specialist known for exceptional client service and attention to detail.",
-      social: ["LinkedIn", "Facebook"],
-    },
   ];
 
-  const achievements = [
+  {/*const achievements = [
     {
       year: "2008",
       event: "Company Founded",
@@ -127,7 +118,7 @@ export default function About() {
       event: "Market Leadership",
       description: "Became regional leader in luxury real estate",
     },
-  ];
+  ];*/}
 
   return (
     <>
@@ -236,78 +227,118 @@ export default function About() {
         </div>
       </section>
 
-      {/* Story Section */}
-      <section className="py-24 bg-white relative overflow-hidden">
-        <div className="container mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -80 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1, type: "spring" }}
-              viewport={{ once: true }}
-              className="relative"
-            >
-              <div className="relative">
-                <div className="absolute -top-6 -left-6 w-24 h-24 bg-yellow-400 rounded-full blur-xl opacity-20"></div>
-                <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-purple-400 rounded-full blur-xl opacity-20"></div>
+     {/* Story Section - Full Width Box */}
+<section className="py-24 bg-white relative overflow-hidden w-full">
+  <div className="w-full px-4 md:px-6 lg:px-8">
+    <div className="max-w-7xl mx-auto">
+      <motion.div
+        initial={{ opacity: 0, y: 80 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, type: "spring" }}
+        viewport={{ once: true }}
+        className="relative w-full"
+      >
+        <div className="relative w-full">
+          {/* Background decorative elements */}
+          <div className="absolute -top-6 -left-6 w-24 h-24 bg-yellow-400 rounded-full blur-xl opacity-20"></div>
+          <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-purple-400 rounded-full blur-xl opacity-20"></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-blue-400 rounded-full blur-3xl opacity-10"></div>
 
-                <div className="bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 p-1 rounded-3xl shadow-2xl transform hover:scale-[1.02] transition-all duration-700">
-                  <div className="bg-white rounded-3xl p-12 backdrop-blur-sm">
-                    <div className="flex items-center gap-4 mb-8">
-                      <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center">
-                        <BuildingOfficeIcon className="w-6 h-6 text-white" />
-                      </div>
-                      <h2 className="text-4xl md:text-5xl font-black text-gray-900">
-                        Our Legacy of Excellence
-                      </h2>
-                    </div>
-
-                    <div className="space-y-6">
-                      <p className="text-gray-700 text-lg leading-relaxed font-medium">
-                        <strong>MBS Realty</strong> stands as a premier
-                        full-service real estate powerhouse, offering
-                        comprehensive solutions in Sales, Investment
-                        Opportunities, Market Analysis, Corporate Services, and
-                        Property Management across Tamil Nadu.
-                      </p>
-
-                      <p className="text-gray-600 text-lg leading-relaxed">
-                        With{" "}
-                        <span className="text-blue-600 font-bold">
-                          15+ years of excellence
-                        </span>
-                        , we've served diverse clients ranging from individual
-                        home seekers to large corporate entities and industrial
-                        pioneers. Our success is built on a foundation of trust,
-                        expertise, and unwavering commitment to client
-                        satisfaction.
-                      </p>
-
-                      <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-6 rounded-2xl border border-blue-100">
-                        <p className="text-gray-700 font-semibold">
-                          "Our vision is to redefine real estate experiences
-                          through innovation, integrity, and exceptional service
-                          that exceeds expectations."
-                        </p>
-                        <p className="text-blue-600 font-bold mt-3">
-                          — Mr R. MAHALINGAM, Founder & CEO
-                        </p>
-                      </div>
-                    </div>
-
-                    <motion.button
-                      className="flex items-center gap-3 mt-8 text-blue-600 font-bold hover:text-blue-700 transition-colors group"
-                      whileHover={{ x: 10 }}
-                    >
-                      Explore Our Journey
-                      <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
-                    </motion.button>
-                  </div>
+          {/* Main gradient box - Full width */}
+          <div className="bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 p-1 rounded-3xl shadow-2xl w-full">
+            <div className="bg-white rounded-3xl p-8 md:p-12 lg:p-16 backdrop-blur-sm w-full">
+              {/* Header */}
+              <div className="flex flex-col md:flex-row items-start md:items-center gap-6 mb-10">
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl flex items-center justify-center flex-shrink-0">
+                  <BuildingOfficeIcon className="w-8 h-8 text-white" />
+                </div>
+                <div>
+                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 leading-tight">
+                    Our Legacy of Excellence
+                  </h2>
+                  <div className="h-2 w-32 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mt-4"></div>
                 </div>
               </div>
-            </motion.div>
 
-            {/* Timeline */}
+              {/* Content */}
+              <div className="space-y-8">
+                {/* First paragraph */}
+                <div className="p-6 bg-gradient-to-r from-blue-50/50 to-purple-50/50 rounded-2xl border border-blue-100/50">
+                  <p className="text-gray-800 text-lg md:text-xl leading-relaxed font-medium">
+                    <span className="text-blue-600 font-bold text-xl">MBS Realty</span> stands as a premier full-service real estate powerhouse, offering comprehensive solutions in Sales, Investment Opportunities, Market Analysis, Corporate Services, and Property Management across Tamil Nadu.
+                  </p>
+                </div>
+
+                {/* Second paragraph with highlight */}
+                <div className="p-6 bg-gradient-to-r from-purple-50/50 to-pink-50/50 rounded-2xl border border-purple-100/50">
+                  <p className="text-gray-700 text-lg md:text-xl leading-relaxed">
+                    With{' '}
+                    <span className="inline-block bg-gradient-to-r from-blue-600 to-purple-600 text-white px-3 py-1 rounded-full text-lg font-bold mx-1">
+                      15+ years of excellence
+                    </span>
+                    {' '}, we've served diverse clients ranging from individual home seekers to large corporate entities and industrial pioneers. Our success is built on a foundation of trust, expertise, and unwavering commitment to client satisfaction.
+                  </p>
+                </div>
+
+                {/* Quote section */}
+                <div className="p-8 bg-gradient-to-r from-blue-100/70 to-purple-100/70 rounded-2xl border-l-4 border-blue-500 relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-24 h-24 opacity-10">
+                    <svg className="w-full h-full text-blue-500" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                    </svg>
+                  </div>
+                  <div className="relative z-10">
+                    <p className="text-gray-800 text-xl md:text-2xl leading-relaxed font-semibold italic mb-6">
+                      "Our vision is to redefine real estate experiences through innovation, integrity, and exceptional service that exceeds expectations."
+                    </p>
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center">
+                        <span className="text-white font-bold">RM</span>
+                      </div>
+                      <div>
+                        <p className="text-blue-600 font-bold text-lg">
+                          — Mr R. MAHALINGAM
+                        </p>
+                        <p className="text-gray-600 font-medium">
+                          Founder & CEO, MBS Realty
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Stats Section 
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
+                  <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-white rounded-2xl border border-blue-100">
+                    <div className="text-4xl font-black text-blue-600 mb-2">15+</div>
+                    <div className="text-gray-700 font-semibold">Years of Excellence</div>
+                  </div>
+                  <div className="text-center p-6 bg-gradient-to-br from-purple-50 to-white rounded-2xl border border-purple-100">
+                    <div className="text-4xl font-black text-purple-600 mb-2">5000+</div>
+                    <div className="text-gray-700 font-semibold">Happy Clients</div>
+                  </div>
+                  <div className="text-center p-6 bg-gradient-to-br from-pink-50 to-white rounded-2xl border border-pink-100">
+                    <div className="text-4xl font-black text-pink-600 mb-2">TN</div>
+                    <div className="text-gray-700 font-semibold">Statewide Presence</div>
+                  </div>
+                </div>*/}
+              </div>
+
+              {/* CTA Button */}
+              <motion.button
+                className="flex items-center justify-center gap-3 mt-12 mx-auto px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-bold text-lg rounded-2xl hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl group w-full md:w-auto"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span>Explore Our Journey</span>
+                <ArrowRightIcon className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+              </motion.button>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+
+            {/* Timeline 
             <motion.div
               initial={{ opacity: 0, x: 80 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -342,7 +373,7 @@ export default function About() {
                   </motion.div>
                 ))}
               </div>
-            </motion.div>
+            </motion.div> */}
           </div>
         </div>
       </section>
