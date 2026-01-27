@@ -18,8 +18,6 @@ export default function Home() {
         <PropertyServices />
       </section>
       
-      <FlagshipProject />
-      
       <Testimonials />
       <section id="contact">
         <Contact />

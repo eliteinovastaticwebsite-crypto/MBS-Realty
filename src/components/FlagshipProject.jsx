@@ -6,7 +6,9 @@ import {
   HomeModernIcon,
   CurrencyDollarIcon,
   SparklesIcon,
-  UserGroupIcon
+  UserGroupIcon,
+  ArrowDownTrayIcon,
+  EyeIcon
 } from '@heroicons/react/24/outline';
 import { useNavigate } from 'react-router-dom';
 
@@ -34,6 +36,24 @@ const FlagshipProject = () => {
   // Handle Explore Properties Navigation
   const handleExploreProperties = () => {
     navigate('/properties');
+  };
+
+  // Handle PDF View
+  const handleViewPDF = () => {
+    const pdfPath = '/mbs-realty-flagship-project.pdf';
+    window.open(pdfPath, '_blank', 'noopener,noreferrer');
+  };
+
+  // Handle PDF Download
+  const handleDownloadPDF = () => {
+    const pdfPath = '/mbs-realty-flagship-project.pdf';
+    const link = document.createElement('a');
+    link.href = pdfPath;
+    link.download = 'MBS-Realty-Flagship-Project.pdf';
+    link.target = '_blank';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -114,6 +134,79 @@ const FlagshipProject = () => {
               ))}
             </div>
 
+           {/* PDF Download Section - VERTICAL LAYOUT */}
+<div className="mb-8 bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-6 border border-blue-100">
+  <h4 className="text-lg font-bold text-gray-900 mb-4 text-center">
+    Project Details PDF
+  </h4>
+  
+  {/* TOP: View PDF Button - CENTERED */}
+  <div className="flex justify-center mb-6">
+    <motion.button
+      onClick={handleViewPDF}
+      className="w-full max-w-md flex items-center justify-between bg-gradient-to-r from-blue-50 to-blue-100 text-blue-600 px-6 py-5 rounded-xl font-bold border-2 border-blue-200 hover:border-blue-300 transition-all duration-300 shadow-lg hover:shadow-xl group"
+      whileHover={{ scale: 1.02, y: -2 }}
+      whileTap={{ scale: 0.98 }}
+    >
+      <div className="flex items-center gap-4">
+        <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+          <EyeIcon className="w-6 h-6 text-white" />
+        </div>
+        <div className="text-left">
+          <div className="text-lg font-black">View Project PDF</div>
+          <div className="text-sm text-blue-500 font-medium">Interactive Preview</div>
+        </div>
+      </div>
+      <div className="text-blue-400 group-hover:text-blue-600 transition-colors">
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        </svg>
+      </div>
+    </motion.button>
+  </div>
+
+  {/* MIDDLE: OR Text - BIG & CENTERED */}
+  <div className="flex flex-col items-center justify-center my-6">
+    <div className="relative w-16 h-16 bg-gradient-to-r from-blue-100 to-purple-100 rounded-full flex items-center justify-center border-2 border-gray-200 mb-2">
+      <span className="text-xl font-black text-gray-700">OR</span>
+    </div>
+    <div className="text-center">
+      <p className="text-sm text-gray-500 font-medium">Choose your option</p>
+    </div>
+  </div>
+
+  {/* BOTTOM: Download PDF Button - CENTERED */}
+  <div className="flex justify-center mt-6">
+    <motion.button
+      onClick={handleDownloadPDF}
+      className="w-full max-w-md flex items-center justify-between bg-gradient-to-r from-purple-50 to-purple-100 text-purple-600 px-6 py-5 rounded-xl font-bold border-2 border-purple-200 hover:border-purple-300 transition-all duration-300 shadow-lg hover:shadow-xl group"
+      whileHover={{ scale: 1.02, y: -2 }}
+      whileTap={{ scale: 0.98 }}
+    >
+      <div className="flex items-center gap-4">
+        <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+          <ArrowDownTrayIcon className="w-6 h-6 text-white" />
+        </div>
+        <div className="text-left">
+          <div className="text-lg font-black">Download Full PDF</div>
+          <div className="text-sm text-purple-500 font-medium">15 Pages • 5.2 MB</div>
+        </div>
+      </div>
+      <div className="text-purple-400 group-hover:text-purple-600 transition-colors">
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+        </svg>
+      </div>
+    </motion.button>
+  </div>
+
+  {/* Additional Info - At the very bottom */}
+  <div className="text-center pt-6 mt-6 border-t border-gray-200">
+    <p className="text-xs text-gray-500">
+      Includes: Financial projections, legal documents, site plans, and community guidelines
+    </p>
+  </div>
+</div>
             {/* Explore Properties Button */}
             <motion.button
               onClick={handleExploreProperties}
