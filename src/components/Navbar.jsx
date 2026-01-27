@@ -55,6 +55,9 @@ export function Navbar() {
     if (location.pathname === "/about") {
       return !isScrolled;
     }
+    if (location.pathname === "/properties") {
+      return !isScrolled;
+    }
     return false;
   };
 
@@ -62,6 +65,11 @@ export function Navbar() {
 
   // Check if properties section is active (for underline)
   const isPropertiesActive = () => {
+    // Return true if on the properties page
+    if (location.pathname === "/properties") {
+      return true;
+    }
+    // Or if on home page and viewing property-services section
     return location.pathname === "/" && (activeSection === "property-services" || forceActiveSection === "property-services");
   };
 
@@ -101,31 +109,8 @@ export function Navbar() {
   };
 
   const handlePropertiesNavigation = () => {
-    if (location.pathname === "/") {
-      // If on home page, scroll to PropertyServices section
-      const element = document.getElementById("property-services");
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-        setForceActiveSection("property-services");
-      }
-    } else {
-      // Navigate to home page first, then scroll to properties
-      navigate("/");
-      // Use a small delay to ensure the home page is loaded
-      setTimeout(() => {
-        const scrollToProperties = () => {
-          const element = document.getElementById("property-services");
-          if (element) {
-            element.scrollIntoView({ behavior: "smooth" });
-            setForceActiveSection("property-services");
-          } else {
-            // If element not found yet, try again after a short delay
-            setTimeout(scrollToProperties, 50);
-          }
-        };
-        scrollToProperties();
-      }, 100);
-    }
+    // Navigate to the properties page
+    navigate("/properties");
     setIsMobileMenuOpen(false);
   };
 
@@ -436,7 +421,7 @@ export function Navbar() {
                   <button
                     onClick={handlePropertiesNavigation}
                     className={`block w-full text-left py-4 px-4 text-lg font-semibold transition-all rounded-xl mb-2 focus:outline-none ${
-                      isPropertiesActive()
+                      location.pathname === "/properties"
                         ? "bg-gradient-to-r from-blue-600 to-purple-600 text-white shadow-lg"
                         : "text-gray-700 hover:text-blue-600 hover:bg-gray-50"
                     }`}

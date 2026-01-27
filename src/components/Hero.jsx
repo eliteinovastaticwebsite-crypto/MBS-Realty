@@ -94,7 +94,7 @@ export default function Hero() {
             </motion.h1>
 
             <motion.p
-              className="text-2xl sm:text-3xl text-white mb-12 max-w-4xl mx-auto leading-relaxed font-light"
+              className="text-2xl sm:text-3xl mb-12 max-w-4xl mx-auto leading-relaxed font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.2 }}

@@ -6,6 +6,7 @@ import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 {/*import FeaturedProperties from "../components/FeaturedProperties"; */}
 import PropertyServices from "../components/PropertyServices";
+import OurFlagship from "../components/OurFlagship";
 
 export default function Home() {
   return (
@@ -17,6 +18,12 @@ export default function Home() {
       <section id="property-services">
         <PropertyServices />
       </section>
+      
+      {/* Add OurFlagship Component Here */}
+      <section id="flagship-project">
+        <OurFlagship />
+      </section>
+      
       <Testimonials />
       <section id="contact">
         <Contact />

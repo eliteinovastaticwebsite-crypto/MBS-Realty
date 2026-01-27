@@ -158,12 +158,12 @@ export default function About() {
             </motion.h1>
 
             <motion.p
-              className="text-2xl text-white max-w-4xl mx-auto mb-12 leading-relaxed font-light"
+              className="text-2xl max-w-4xl mx-auto mb-12 leading-relaxed font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6 }}
             >
-              For over 15 years, we've been the architects of dreams,
+              For over 20 years, we've been the architects of dreams,
               transforming real estate visions into extraordinary realities. We
               don't just sell properties; we craft legacies and build
               relationships that transcend generations.

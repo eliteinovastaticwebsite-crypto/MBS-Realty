@@ -2,19 +2,18 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from "react-route
 import { useEffect } from "react";
 import Home from "./pages/Home";
 import About from "./pages/About";
+import Properties from "./pages/Properties";
+import ScrollToTopButton from "./components/ScrollToTop"; // 👈 ADD THIS LINE
 
-// 👇 Scroll to top when route changes
+// 👇 Your existing scroll functions (keep these)
 function ScrollToTop() {
   const { pathname } = useLocation();
-
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [pathname]);
-
   return null;
 }
 
-// 👇 Your existing ScrollToHash
 function ScrollToHash() {
   useEffect(() => {
     const handleHashChange = () => {
@@ -26,12 +25,10 @@ function ScrollToHash() {
         }
       }
     };
-
     handleHashChange();
     window.addEventListener("hashchange", handleHashChange);
     return () => window.removeEventListener("hashchange", handleHashChange);
   }, []);
-
   return null;
 }
 
@@ -44,7 +41,12 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/properties" element={<Properties />} />
       </Routes>
+
+      {/* 👇 ADD THIS LINE - ScrollToTop button will appear on all pages */}
+      <ScrollToTopButton />
     </Router>
   );
 }
+
