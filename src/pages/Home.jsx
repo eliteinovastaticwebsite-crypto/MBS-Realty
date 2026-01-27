@@ -4,25 +4,21 @@ import Services from "../components/Services";
 import Testimonials from "../components/Testimonials";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
-{/*import FeaturedProperties from "../components/FeaturedProperties"; */}
 import PropertyServices from "../components/PropertyServices";
-import OurFlagship from "../components/OurFlagship";
+import FlagshipProject from "../components/FlagshipProject"; // Updated import name
 
 export default function Home() {
   return (
     <>
       <Navbar />
       <Hero />
+       <FlagshipProject />
       <Services />
-      {/* <FeaturedProperties /> */}
       <section id="property-services">
         <PropertyServices />
       </section>
       
-      {/* Add OurFlagship Component Here */}
-      <section id="flagship-project">
-        <OurFlagship />
-      </section>
+      <FlagshipProject />
       
       <Testimonials />
       <section id="contact">

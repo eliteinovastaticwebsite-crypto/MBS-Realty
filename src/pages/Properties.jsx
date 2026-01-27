@@ -1,8 +1,11 @@
 import { motion } from "framer-motion";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import OurFlagship from "../components/OurFlagship";
 import {
   BuildingOfficeIcon,
+  StarIcon,
+  UsersIcon,
   ArrowRightIcon,
   SparklesIcon,
   ChartBarIcon,
@@ -10,8 +13,10 @@ import {
   ShieldCheckIcon,
   LightBulbIcon,
   RocketLaunchIcon,
+  ChartPieIcon,
+  // Remove HandshakeIcon - it doesn't exist in outline
 } from "@heroicons/react/24/outline";
-import PropertiesBannerImage from "../assets/AboutBannerImage.avif"; // You can replace with properties-specific image
+import PropertiesBannerImage from "../assets/AboutBannerImage.avif";
 
 export default function Properties() {
   return (
@@ -118,275 +123,307 @@ export default function Properties() {
         </div>
       </section>
 
+      <OurFlagship />
+      
       {/* MBS Ecosystem Section */}
-      <section className="py-12 md:py-20 lg:py-32 bg-white relative overflow-hidden w-full">
-        <div className="w-full px-4 sm:px-6 lg:px-8">
-          <div className="max-w-7xl mx-auto">
+      <section className="py-24 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left Content - Main Information */}
             <motion.div
-              initial={{ opacity: 0, y: 80 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: -80 }}
+              whileInView={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, type: "spring" }}
               viewport={{ once: true }}
-              className="relative w-full"
+              className="relative"
             >
-              <div className="relative w-full">
-                {/* Background decorative elements */}
-                <div className="hidden md:block absolute -top-6 -left-6 w-24 h-24 bg-yellow-400 rounded-full blur-xl opacity-20"></div>
-                <div className="hidden md:block absolute -bottom-6 -right-6 w-32 h-32 bg-purple-400 rounded-full blur-xl opacity-20"></div>
-                <div className="hidden md:block absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 bg-blue-400 rounded-full blur-3xl opacity-10"></div>
+              {/* Background Elements */}
+              <div className="absolute -top-6 -left-6 w-24 h-24 bg-blue-400 rounded-full blur-xl opacity-20"></div>
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-purple-400 rounded-full blur-xl opacity-20"></div>
+              
+              <div className="relative">
+                {/* Header */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  viewport={{ once: true }}
+                  className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-200 px-4 py-2 rounded-full mb-8"
+                >
+                  <StarIcon className="w-4 h-4 text-blue-600" />
+                  <span className="text-blue-700 font-semibold text-sm">Competitive Advantage</span>
+                </motion.div>
 
-                {/* Main gradient box */}
-                <div className="bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 p-0.5 md:p-1 rounded-2xl md:rounded-3xl shadow-xl md:shadow-2xl w-full">
-                  <div className="bg-white rounded-2xl md:rounded-3xl p-4 sm:p-6 md:p-10 lg:p-16 backdrop-blur-sm w-full">
-                    
-                    {/* Header Section */}
-                    <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 md:gap-6 mb-8 md:mb-12 lg:mb-16">
-                      <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl md:rounded-2xl flex items-center justify-center flex-shrink-0">
-                        <BuildingOfficeIcon className="w-6 h-6 md:w-8 md:h-8 text-white" />
-                      </div>
-                      <div className="flex-1 w-full">
-                        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 leading-tight">
-                          THE MBS ECOSYSTEM
-                        </h2>
-                        <div className="h-1.5 md:h-2 w-full sm:w-48 md:w-64 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mt-3 md:mt-4"></div>
-                      </div>
-                    </div>
+                <motion.h2
+                  className="text-4xl md:text-5xl font-black text-gray-900 mb-6"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.3 }}
+                  viewport={{ once: true }}
+                >
+                  THE MBS ECOSYSTEM
+                </motion.h2>
 
-                    {/* Success Through Partnership */}
-                    <div className="mb-8 md:mb-10">
-                      <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-gray-900 mb-3 md:mb-4 italic">
-                        Success Through Partnership
-                      </h3>
-                    </div>
+                {/* Success Through Partnership */}
+                <motion.h3
+                  className="text-2xl md:text-3xl font-black text-blue-600 mb-6"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  viewport={{ once: true }}
+                >
+                  Success Through Partnership
+                </motion.h3>
 
-                    {/* Main Content */}
-                    <div className="space-y-6 md:space-y-10">
-                      
-                      {/* What Is the MBS Ecosystem */}
-                      <div className="p-4 sm:p-6 md:p-8 bg-gradient-to-r from-blue-50/50 to-purple-50/50 rounded-xl md:rounded-2xl border border-blue-100/50">
-                        <h4 className="text-lg sm:text-xl md:text-2xl font-black text-gray-900 mb-4">
-                          What Is the MBS Ecosystem?
-                        </h4>
-                        <p className="text-gray-800 text-base sm:text-lg md:text-xl leading-relaxed mb-4">
-                          The <span className="font-bold">MBS Ecosystem</span> is not a slogan — it is our <span className="font-bold">competitive advantage</span>.
-                        </p>
-                        <p className="text-gray-800 text-base sm:text-lg md:text-xl leading-relaxed mb-4">
-                          It is the intelligence created from the continuous interaction between:
-                        </p>
-                        <ul className="space-y-2 ml-6">
-                          <li className="text-gray-800 text-base sm:text-lg md:text-xl leading-relaxed list-disc">
-                            Strategic assets
-                          </li>
-                          <li className="text-gray-800 text-base sm:text-lg md:text-xl leading-relaxed list-disc">
-                            Operating platforms
-                          </li>
-                          <li className="text-gray-800 text-base sm:text-lg md:text-xl leading-relaxed list-disc">
-                            Global partnerships
-                          </li>
-                          <li className="text-gray-800 text-base sm:text-lg md:text-xl leading-relaxed list-disc">
-                            Market intelligence
-                          </li>
-                        </ul>
-                      </div>
-
-                      {/* Ecosystem Benefits */}
-                      <div className="p-4 sm:p-6 md:p-8 bg-gradient-to-r from-purple-50/50 to-pink-50/50 rounded-xl md:rounded-2xl border border-purple-100/50">
-                        <p className="text-gray-800 text-base sm:text-lg md:text-xl leading-relaxed">
-                          This ecosystem allows us to <span className="font-bold">identify opportunities faster</span>, <span className="font-bold">evaluate risks better</span>, and <span className="font-bold">execute with precision</span>.
-                        </p>
-                      </div>
-
-                      {/* Comparison Table */}
-                      <div className="overflow-hidden rounded-xl md:rounded-2xl border border-gray-200 shadow-lg">
-                        <div className="bg-gradient-to-r from-blue-500 to-purple-500 p-4 md:p-6">
-                          <h3 className="text-xl sm:text-2xl md:text-3xl font-black text-white text-center">
-                            MBS Ecosystem vs Traditional Real Estate Models
-                          </h3>
+                <motion.div
+                  className="space-y-6 mb-8"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.5 }}
+                  viewport={{ once: true }}
+                >
+                  {/* What is MBS Ecosystem */}
+                  <div className="p-6 bg-gradient-to-r from-blue-50/50 to-purple-50/50 rounded-xl border border-blue-100/50">
+                    <h4 className="text-2xl font-black text-gray-900 mb-4">
+                      What Is the MBS Ecosystem?
+                    </h4>
+                    <p className="text-gray-800 text-lg leading-relaxed mb-4">
+                      The <span className="font-bold text-blue-600">MBS Ecosystem</span> is not a slogan — it is our <span className="font-bold text-purple-600">competitive advantage</span>.
+                    </p>
+                    <p className="text-gray-800 text-lg leading-relaxed mb-6">
+                      It is the intelligence created from the continuous interaction between:
+                    </p>
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-3">
+                        <div className="w-5 h-5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
+                          <div className="w-2 h-2 bg-white rounded-full"></div>
                         </div>
-                        
-                        {/* Desktop View - Table */}
-                        <div className="hidden md:block overflow-x-auto">
-                          <table className="w-full">
-                            <thead className="bg-gray-50">
-                              <tr>
-                                <th className="py-3 md:py-4 px-4 md:px-6 text-left font-bold text-gray-700 text-base md:text-lg border-b">
-                                  Element
-                                </th>
-                                <th className="py-3 md:py-4 px-4 md:px-6 text-left font-bold text-gray-700 text-base md:text-lg border-b">
-                                  MBS Ecosystem
-                                </th>
-                                <th className="py-3 md:py-4 px-4 md:px-6 text-left font-bold text-gray-700 text-base md:text-lg border-b">
-                                  Traditional Model
-                                </th>
-                              </tr>
-                            </thead>
-                            <tbody className="divide-y divide-gray-100">
-                              <tr className="hover:bg-blue-50/50 transition-colors">
-                                <td className="py-3 md:py-4 px-4 md:px-6 font-semibold text-gray-700 text-sm md:text-base">
-                                  Decision Making
-                                </td>
-                                <td className="py-3 md:py-4 px-4 md:px-6 text-gray-800 text-sm md:text-base">
-                                  Data + insight driven
-                                </td>
-                                <td className="py-3 md:py-4 px-4 md:px-6 text-gray-600 text-sm md:text-base">
-                                  Price driven
-                                </td>
-                              </tr>
-                              <tr className="hover:bg-blue-50/50 transition-colors">
-                                <td className="py-3 md:py-4 px-4 md:px-6 font-semibold text-gray-700 text-sm md:text-base">
-                                  Opportunity Sourcing
-                                </td>
-                                <td className="py-3 md:py-4 px-4 md:px-6 text-gray-800 text-sm md:text-base">
-                                  Proactive & global
-                                </td>
-                                <td className="py-3 md:py-4 px-4 md:px-6 text-gray-600 text-sm md:text-base">
-                                  Reactive & local
-                                </td>
-                              </tr>
-                              <tr className="hover:bg-blue-50/50 transition-colors">
-                                <td className="py-3 md:py-4 px-4 md:px-6 font-semibold text-gray-700 text-sm md:text-base">
-                                  Risk Management
-                                </td>
-                                <td className="py-3 md:py-4 px-4 md:px-6 text-gray-800 text-sm md:text-base">
-                                  Structured & layered
-                                </td>
-                                <td className="py-3 md:py-4 px-4 md:px-6 text-gray-600 text-sm md:text-base">
-                                  Ad-hoc
-                                </td>
-                              </tr>
-                              <tr className="hover:bg-blue-50/50 transition-colors">
-                                <td className="py-3 md:py-4 px-4 md:px-6 font-semibold text-gray-700 text-sm md:text-base">
-                                  Partnerships
-                                </td>
-                                <td className="py-3 md:py-4 px-4 md:px-6 text-gray-800 text-sm md:text-base">
-                                  Long-term alliances
-                                </td>
-                                <td className="py-3 md:py-4 px-4 md:px-6 text-gray-600 text-sm md:text-base">
-                                  One-time transactions
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
-                        </div>
-
-                        {/* Mobile View - Cards */}
-                        <div className="block md:hidden divide-y divide-gray-100">
-                          {[
-                            {
-                              element: "Decision Making",
-                              mbs: "Data + insight driven",
-                              traditional: "Price driven",
-                            },
-                            {
-                              element: "Opportunity Sourcing",
-                              mbs: "Proactive & global",
-                              traditional: "Reactive & local",
-                            },
-                            {
-                              element: "Risk Management",
-                              mbs: "Structured & layered",
-                              traditional: "Ad-hoc",
-                            },
-                            {
-                              element: "Partnerships",
-                              mbs: "Long-term alliances",
-                              traditional: "One-time transactions",
-                            }
-                          ].map((item, idx) => (
-                            <div key={idx} className="p-4 bg-white">
-                              <div className="font-bold text-gray-900 text-base mb-3 flex items-center gap-2">
-                                <div className="w-1.5 h-6 bg-blue-500 rounded-full"></div>
-                                {item.element}
-                              </div>
-                              <div className="space-y-2">
-                                <div className="flex items-start gap-2">
-                                  <div className="bg-blue-50 text-gray-800 px-2.5 py-1.5 rounded-lg text-sm font-semibold flex-1">
-                                    MBS: {item.mbs}
-                                  </div>
-                                </div>
-                                <div className="flex items-start gap-2">
-                                  <div className="bg-gray-100 text-gray-600 px-2.5 py-1.5 rounded-lg text-sm flex-1">
-                                    Traditional: {item.traditional}
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          ))}
-                        </div>
+                        <span className="text-gray-700 font-medium">Strategic assets</span>
                       </div>
-
-                      {/* Core Benefits */}
-                      <div className="p-4 sm:p-6 md:p-8 bg-gradient-to-r from-blue-50/50 to-purple-50/50 rounded-xl md:rounded-2xl border border-blue-100/50">
-                        <h4 className="text-lg sm:text-xl md:text-2xl font-black text-gray-900 mb-6">
-                          Core Benefits of the MBS Ecosystem
-                        </h4>
-                        
-                        <div className="space-y-6">
-                          {/* Clarity */}
-                          <div className="flex items-start gap-4">
-                            <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg md:rounded-xl flex items-center justify-center flex-shrink-0">
-                              <LightBulbIcon className="w-5 h-5 md:w-6 md:h-6 text-white" />
-                            </div>
-                            <div className="flex-1">
-                              <h5 className="text-base sm:text-lg md:text-xl font-black text-gray-900 mb-2">
-                                Clarity
-                              </h5>
-                              <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed">
-                                We see opportunities early and act with confidence.
-                              </p>
-                            </div>
-                          </div>
-
-                          {/* Precision */}
-                          <div className="flex items-start gap-4">
-                            <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg md:rounded-xl flex items-center justify-center flex-shrink-0">
-                              <ChartBarIcon className="w-5 h-5 md:w-6 md:h-6 text-white" />
-                            </div>
-                            <div className="flex-1">
-                              <h5 className="text-base sm:text-lg md:text-xl font-black text-gray-900 mb-2">
-                                Precision
-                              </h5>
-                              <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed">
-                                Strategic intelligence sharpens every decision.
-                              </p>
-                            </div>
-                          </div>
-
-                          {/* Cultivation */}
-                          <div className="flex items-start gap-4">
-                            <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-r from-green-500 to-teal-500 rounded-lg md:rounded-xl flex items-center justify-center flex-shrink-0">
-                              <RocketLaunchIcon className="w-5 h-5 md:w-6 md:h-6 text-white" />
-                            </div>
-                            <div className="flex-1">
-                              <h5 className="text-base sm:text-lg md:text-xl font-black text-gray-900 mb-2">
-                                Cultivation
-                              </h5>
-                              <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed">
-                                Relationships don't just support deals — they create them.
-                              </p>
-                            </div>
-                          </div>
-
-                          {/* Scale */}
-                          <div className="flex items-start gap-4">
-                            <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg md:rounded-xl flex items-center justify-center flex-shrink-0">
-                              <GlobeAltIcon className="w-5 h-5 md:w-6 md:h-6 text-white" />
-                            </div>
-                            <div className="flex-1">
-                              <h5 className="text-base sm:text-lg md:text-xl font-black text-gray-900 mb-2">
-                                Scale
-                              </h5>
-                              <p className="text-gray-700 text-sm sm:text-base md:text-lg leading-relaxed">
-                                Global networks unlock larger, smarter opportunities.
-                              </p>
-                            </div>
-                          </div>
+                      <div className="flex items-center gap-3">
+                        <div className="w-5 h-5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
+                          <div className="w-2 h-2 bg-white rounded-full"></div>
                         </div>
+                        <span className="text-gray-700 font-medium">Operating platforms</span>
                       </div>
-
+                      <div className="flex items-center gap-3">
+                        <div className="w-5 h-5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
+                          <div className="w-2 h-2 bg-white rounded-full"></div>
+                        </div>
+                        <span className="text-gray-700 font-medium">Global partnerships</span>
+                      </div>
+                      <div className="flex items-center gap-3">
+                        <div className="w-5 h-5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center flex-shrink-0">
+                          <div className="w-2 h-2 bg-white rounded-full"></div>
+                        </div>
+                        <span className="text-gray-700 font-medium">Market intelligence</span>
+                      </div>
                     </div>
                   </div>
-                </div>
+
+                  {/* Ecosystem Benefits */}
+                  <div className="p-6 bg-gradient-to-r from-purple-50/50 to-pink-50/50 rounded-xl border border-purple-100/50">
+                    <div className="flex items-start gap-4">
+                      <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <ChartBarIcon className="w-6 h-6 text-white" />
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="text-xl font-black text-gray-900 mb-3">
+                          Ecosystem Benefits
+                        </h4>
+                        <p className="text-gray-800 text-lg leading-relaxed">
+                          This ecosystem allows us to <span className="font-bold text-blue-600">identify opportunities faster</span>,{' '}
+                          <span className="font-bold text-purple-600">evaluate risks better</span>, and{' '}
+                          <span className="font-bold text-pink-600">execute with precision</span>.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Core Benefits Summary */}
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="bg-gradient-to-br from-blue-50 to-blue-100 p-4 rounded-xl border border-blue-200 text-center">
+                      <div className="text-2xl font-black text-blue-600 mb-1">Data-Driven</div>
+                      <div className="text-xs font-bold text-gray-800">Decision Making</div>
+                    </div>
+                    <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-4 rounded-xl border border-purple-200 text-center">
+                      <div className="text-2xl font-black text-purple-600 mb-1">Global</div>
+                      <div className="text-xs font-bold text-gray-800">Opportunity Sourcing</div>
+                    </div>
+                    <div className="bg-gradient-to-br from-green-50 to-green-100 p-4 rounded-xl border border-green-200 text-center">
+                      <div className="text-2xl font-black text-green-600 mb-1">Structured</div>
+                      <div className="text-xs font-bold text-gray-800">Risk Management</div>
+                    </div>
+                    <div className="bg-gradient-to-br from-pink-50 to-pink-100 p-4 rounded-xl border border-pink-200 text-center">
+                      <div className="text-2xl font-black text-pink-600 mb-1">Long-Term</div>
+                      <div className="text-xs font-bold text-gray-800">Partnerships</div>
+                    </div>
+                  </div>
+                </motion.div>
+              </div>
+            </motion.div>
+
+            {/* Right Content - Visual Card */}
+            <motion.div
+              initial={{ opacity: 0, x: 80 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, type: "spring" }}
+              viewport={{ once: true }}
+              className="relative"
+            >
+              <div className="relative">
+                {/* Main Card */}
+                <motion.div
+                  className="bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 p-1 rounded-3xl shadow-2xl transform hover:scale-[1.02] transition-all duration-700"
+                  whileHover={{ scale: 1.02 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                >
+                  <div className="bg-white rounded-3xl p-8 backdrop-blur-sm">
+                    {/* Ecosystem Visualization */}
+                    <div className="aspect-square rounded-2xl bg-gradient-to-br from-blue-100 to-purple-100 relative overflow-hidden flex items-center justify-center mb-6">
+                      <div className="relative w-full h-full flex items-center justify-center">
+                        {/* Central Node */}
+                        <div className="absolute w-32 h-32 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center shadow-2xl z-10">
+                          <BuildingOfficeIcon className="w-16 h-16 text-white" />
+                        </div>
+                        
+                        {/* Connecting Lines */}
+                        <div className="absolute inset-0">
+                          <div className="absolute top-1/4 left-1/2 w-32 h-1 bg-blue-300 transform -translate-y-1/2 rotate-45"></div>
+                          <div className="absolute top-1/2 right-1/4 w-32 h-1 bg-purple-300 transform -translate-y-1/2"></div>
+                          <div className="absolute bottom-1/4 left-1/2 w-32 h-1 bg-pink-300 transform -translate-y-1/2 rotate-135"></div>
+                          <div className="absolute top-1/2 left-1/4 w-32 h-1 bg-cyan-300 transform -translate-y-1/2 rotate-180"></div>
+                        </div>
+
+                        {/* Satellite Nodes - Updated with UsersIcon instead of HandshakeIcon */}
+                        {[
+                          { top: "20%", left: "30%", icon: UsersIcon, color: "blue", label: "Assets" },
+                          { top: "20%", left: "70%", icon: ShieldCheckIcon, color: "purple", label: "Platforms" },
+                          { top: "70%", left: "70%", icon: ChartPieIcon, color: "pink", label: "Partnerships" },
+                          { top: "70%", left: "30%", icon: UsersIcon, color: "cyan", label: "Intelligence" } // Changed from HandshakeIcon to UsersIcon
+                        ].map((node, index) => (
+                          <motion.div
+                            key={index}
+                            className={`absolute w-16 h-16 bg-gradient-to-r from-${node.color}-500 to-${node.color}-600 rounded-full flex flex-col items-center justify-center shadow-lg`}
+                            style={{ top: node.top, left: node.left }}
+                            animate={{
+                              scale: [1, 1.1, 1],
+                              y: [0, -5, 0]
+                            }}
+                            transition={{
+                              duration: 2,
+                              repeat: Infinity,
+                              delay: index * 0.5
+                            }}
+                          >
+                            <node.icon className="w-8 h-8 text-white mb-1" />
+                            <span className="text-xs font-bold text-white">{node.label}</span>
+                          </motion.div>
+                        ))}
+                      </div>
+
+                      {/* Floating Labels */}
+                      <motion.div
+                        className="absolute top-6 left-6 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg shadow-lg"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.6, delay: 1 }}
+                        viewport={{ once: true }}
+                      >
+                        <span className="text-sm font-bold text-gray-800">Strategic Network</span>
+                      </motion.div>
+                      
+                      <motion.div
+                        className="absolute top-6 right-6 bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 0.6, delay: 1.2 }}
+                        viewport={{ once: true }}
+                      >
+                        <span className="text-sm font-bold">Global Reach</span>
+                      </motion.div>
+                      
+                      <motion.div
+                        className="absolute bottom-6 left-1/2 transform -translate-x-1/2 bg-blue-600 text-white px-4 py-2 rounded-lg shadow-lg"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 1.4 }}
+                        viewport={{ once: true }}
+                      >
+                        <span className="text-sm font-bold">Continuous Intelligence</span>
+                      </motion.div>
+                    </div>
+                    
+                    {/* Core Benefits */}
+                    <div className="space-y-4">
+                      <h3 className="text-2xl font-black text-gray-900 mb-4 text-center">Core Benefits</h3>
+                      
+                      <div className="grid grid-cols-2 gap-4">
+                        {/* Clarity */}
+                        <div className="flex items-center gap-3 p-3 bg-gradient-to-r from-blue-50 to-blue-100 rounded-xl">
+                          <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <LightBulbIcon className="w-5 h-5 text-white" />
+                          </div>
+                          <div>
+                            <h5 className="text-sm font-bold text-gray-900">Clarity</h5>
+                            <p className="text-xs text-gray-600">See opportunities early</p>
+                          </div>
+                        </div>
+
+                        {/* Precision */}
+                        <div className="flex items-center gap-3 p-3 bg-gradient-to-r from-purple-50 to-purple-100 rounded-xl">
+                          <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <ChartBarIcon className="w-5 h-5 text-white" />
+                          </div>
+                          <div>
+                            <h5 className="text-sm font-bold text-gray-900">Precision</h5>
+                            <p className="text-xs text-gray-600">Sharp strategic decisions</p>
+                          </div>
+                        </div>
+
+                        {/* Cultivation */}
+                        <div className="flex items-center gap-3 p-3 bg-gradient-to-r from-green-50 to-green-100 rounded-xl">
+                          <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-teal-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <RocketLaunchIcon className="w-5 h-5 text-white" />
+                          </div>
+                          <div>
+                            <h5 className="text-sm font-bold text-gray-900">Cultivation</h5>
+                            <p className="text-xs text-gray-600">Create deals from relationships</p>
+                          </div>
+                        </div>
+
+                        {/* Scale */}
+                        <div className="flex items-center gap-3 p-3 bg-gradient-to-r from-orange-50 to-orange-100 rounded-xl">
+                          <div className="w-10 h-10 bg-gradient-to-r from-orange-500 to-red-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <GlobeAltIcon className="w-5 h-5 text-white" />
+                          </div>
+                          <div>
+                            <h5 className="text-sm font-bold text-gray-900">Scale</h5>
+                            <p className="text-xs text-gray-600">Global network opportunities</p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Floating Decorative Elements */}
+                <motion.div
+                  className="absolute -top-4 -right-4 w-20 h-20 bg-yellow-400 rounded-full blur-xl opacity-30"
+                  animate={{
+                    scale: [1, 1.2, 1],
+                    opacity: [0.3, 0.5, 0.3]
+                  }}
+                  transition={{ duration: 4, repeat: Infinity }}
+                />
+                <motion.div
+                  className="absolute -bottom-4 -left-4 w-16 h-16 bg-cyan-400 rounded-full blur-xl opacity-30"
+                  animate={{
+                    scale: [1.2, 1, 1.2],
+                    opacity: [0.3, 0.5, 0.3]
+                  }}
+                  transition={{ duration: 3, repeat: Infinity, delay: 1 }}
+                />
               </div>
             </motion.div>
           </div>
