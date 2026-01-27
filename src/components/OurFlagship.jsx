@@ -224,109 +224,129 @@ const OurFlagship = () => {
         </div>
 
         {/* New PDF Section - Horizontal Buttons */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="mt-16 md:mt-20"
+<motion.div
+  initial={{ opacity: 0, y: 50 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, delay: 0.2 }}
+  viewport={{ once: true }}
+  className="mt-16 md:mt-20"
+>
+  <div className="bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 p-1 rounded-2xl md:rounded-3xl shadow-xl md:shadow-2xl">
+    <div className="bg-white rounded-2xl md:rounded-3xl p-6 md:p-8">
+      {/* Big Horizontal PDF Buttons */}
+      <div className="flex flex-col md:flex-row gap-6 md:gap-8 items-center">
+        {/* View PDF Button - Horizontal Layout */}
+        <motion.button
+          onClick={handleViewPDF}
+          className="flex-1 flex items-center justify-between bg-gradient-to-r from-blue-50 to-blue-100 text-blue-600 px-6 md:px-10 py-8 md:py-12 rounded-2xl md:rounded-3xl font-bold border-2 border-blue-200 hover:border-blue-300 transition-all duration-300 shadow-xl hover:shadow-2xl group relative overflow-hidden"
+          whileHover={{ scale: 1.02, y: -4 }}
+          whileTap={{ scale: 0.98 }}
         >
-          <div className="bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 p-1 rounded-2xl md:rounded-3xl shadow-xl md:shadow-2xl">
-            <div className="bg-white rounded-2xl md:rounded-3xl p-6 md:p-8">
-              {/* Big Horizontal PDF Buttons */}
-              <div className="flex flex-col md:flex-row gap-6 md:gap-8">
-                {/* View PDF Button - Horizontal Layout */}
-                <motion.button
-                  onClick={handleViewPDF}
-                  className="flex-1 flex items-center justify-between bg-gradient-to-r from-blue-50 to-blue-100 text-blue-600 px-6 md:px-10 py-8 md:py-12 rounded-2xl md:rounded-3xl font-bold border-2 border-blue-200 hover:border-blue-300 transition-all duration-300 shadow-xl hover:shadow-2xl group relative overflow-hidden"
-                  whileHover={{ scale: 1.02, y: -4 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  {/* Background Pattern */}
-                  <div className="absolute inset-0 opacity-5">
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500 rounded-full -translate-y-8 translate-x-8"></div>
-                    <div className="absolute bottom-0 left-0 w-40 h-40 bg-blue-400 rounded-full translate-y-12 -translate-x-12"></div>
-                  </div>
-                  
-                  <div className="relative z-10 flex items-center gap-4 md:gap-6 w-full">
-                    <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl md:rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                      <EyeIcon className="w-8 h-8 md:w-10 md:h-10 text-white" />
-                    </div>
-                    
-                    <div className="flex-1 text-left">
-                      <h3 className="text-xl md:text-2xl lg:text-3xl font-black mb-2 md:mb-3 group-hover:text-blue-700 transition-colors">
-                        View Project PDF
-                      </h3>
-                      <p className="text-blue-500 font-medium text-sm md:text-base mb-1 md:mb-2">
-                        Interactive Preview
-                      </p>
-                      <div className="flex items-center gap-2 text-blue-400 group-hover:text-blue-600 transition-colors">
-                        <span className="text-xs md:text-sm font-semibold">Open in Browser</span>
-                        <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                        </svg>
-                      </div>
-                    </div>
-                    
-                    <div className="text-blue-300 group-hover:text-blue-500 transition-colors">
-                      <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                      </svg>
-                    </div>
-                  </div>
-                </motion.button>
-
-                {/* Download PDF Button - Horizontal Layout */}
-                <motion.button
-                  onClick={handleDownloadPDF}
-                  className="flex-1 flex items-center justify-between bg-gradient-to-r from-purple-50 to-purple-100 text-purple-600 px-6 md:px-10 py-8 md:py-12 rounded-2xl md:rounded-3xl font-bold border-2 border-purple-200 hover:border-purple-300 transition-all duration-300 shadow-xl hover:shadow-2xl group relative overflow-hidden"
-                  whileHover={{ scale: 1.02, y: -4 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  {/* Background Pattern */}
-                  <div className="absolute inset-0 opacity-5">
-                    <div className="absolute top-0 left-0 w-32 h-32 bg-purple-500 rounded-full -translate-y-8 -translate-x-8"></div>
-                    <div className="absolute bottom-0 right-0 w-40 h-40 bg-purple-400 rounded-full translate-y-12 translate-x-12"></div>
-                  </div>
-                  
-                  <div className="relative z-10 flex items-center gap-4 md:gap-6 w-full">
-                    <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl md:rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                      <ArrowDownTrayIcon className="w-8 h-8 md:w-10 md:h-10 text-white" />
-                    </div>
-                    
-                    <div className="flex-1 text-left">
-                      <h3 className="text-xl md:text-2xl lg:text-3xl font-black mb-2 md:mb-3 group-hover:text-purple-700 transition-colors">
-                        Download Full PDF
-                      </h3>
-                      <p className="text-purple-500 font-medium text-sm md:text-base mb-1 md:mb-2">
-                        15 Pages • 5.2 MB
-                      </p>
-                      <div className="flex items-center gap-2 text-purple-400 group-hover:text-purple-600 transition-colors">
-                        <span className="text-xs md:text-sm font-semibold">Save to Device</span>
-                        <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                        </svg>
-                      </div>
-                    </div>
-                    
-                    <div className="text-purple-300 group-hover:text-purple-500 transition-colors">
-                      <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                      </svg>
-                    </div>
-                  </div>
-                </motion.button>
-              </div>
-
-              {/* Additional Info */}
-              <div className="text-center pt-8 md:pt-12 mt-8 md:mt-12 border-t border-gray-200">
-                <p className="text-sm md:text-base text-gray-600 font-medium">
-                  Includes: Financial projections, legal documents, site plans, and community guidelines
-                </p>
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-500 rounded-full -translate-y-8 translate-x-8"></div>
+            <div className="absolute bottom-0 left-0 w-40 h-40 bg-blue-400 rounded-full translate-y-12 -translate-x-12"></div>
+          </div>
+          
+          <div className="relative z-10 flex items-center gap-4 md:gap-6 w-full">
+            <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl md:rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+              <EyeIcon className="w-8 h-8 md:w-10 md:h-10 text-white" />
+            </div>
+            
+            <div className="flex-1 text-left">
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-black mb-2 md:mb-3 group-hover:text-blue-700 transition-colors">
+                View Project PDF
+              </h3>
+              <p className="text-blue-500 font-medium text-sm md:text-base mb-1 md:mb-2">
+                Interactive Preview
+              </p>
+              <div className="flex items-center gap-2 text-blue-400 group-hover:text-blue-600 transition-colors">
+                <span className="text-xs md:text-sm font-semibold">Open in Browser</span>
+                <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
               </div>
             </div>
+            
+            <div className="text-blue-300 group-hover:text-blue-500 transition-colors">
+              <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </div>
           </div>
-        </motion.div>
+        </motion.button>
+
+        {/* OR Text - Added Here */}
+        <div className="hidden md:flex items-center justify-center my-4">
+          <div className="h-px w-12 bg-gray-300"></div>
+          <span className="px-4 py-2 bg-gradient-to-r from-blue-100 to-purple-100 text-gray-700 font-bold text-lg rounded-full border border-gray-200 shadow-sm">
+            OR
+          </span>
+          <div className="h-px w-12 bg-gray-300"></div>
+        </div>
+
+        {/* Mobile OR Text */}
+        <div className="md:hidden my-4">
+          <div className="flex items-center justify-center">
+            <div className="h-px w-20 bg-gray-300"></div>
+            <span className="px-6 py-2 bg-gradient-to-r from-blue-100 to-purple-100 text-gray-700 font-bold text-lg rounded-full border border-gray-200 shadow-sm">
+              OR
+            </span>
+            <div className="h-px w-20 bg-gray-300"></div>
+          </div>
+        </div>
+
+        {/* Download PDF Button - Horizontal Layout */}
+        <motion.button
+          onClick={handleDownloadPDF}
+          className="flex-1 flex items-center justify-between bg-gradient-to-r from-purple-50 to-purple-100 text-purple-600 px-6 md:px-10 py-8 md:py-12 rounded-2xl md:rounded-3xl font-bold border-2 border-purple-200 hover:border-purple-300 transition-all duration-300 shadow-xl hover:shadow-2xl group relative overflow-hidden"
+          whileHover={{ scale: 1.02, y: -4 }}
+          whileTap={{ scale: 0.98 }}
+        >
+          {/* Background Pattern */}
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute top-0 left-0 w-32 h-32 bg-purple-500 rounded-full -translate-y-8 -translate-x-8"></div>
+            <div className="absolute bottom-0 right-0 w-40 h-40 bg-purple-400 rounded-full translate-y-12 translate-x-12"></div>
+          </div>
+          
+          <div className="relative z-10 flex items-center gap-4 md:gap-6 w-full">
+            <div className="w-16 h-16 md:w-20 md:h-20 bg-gradient-to-r from-purple-500 to-purple-600 rounded-xl md:rounded-2xl flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+              <ArrowDownTrayIcon className="w-8 h-8 md:w-10 md:h-10 text-white" />
+            </div>
+            
+            <div className="flex-1 text-left">
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-black mb-2 md:mb-3 group-hover:text-purple-700 transition-colors">
+                Download Full PDF
+              </h3>
+              <p className="text-purple-500 font-medium text-sm md:text-base mb-1 md:mb-2">
+                15 Pages • 5.2 MB
+              </p>
+              <div className="flex items-center gap-2 text-purple-400 group-hover:text-purple-600 transition-colors">
+                <span className="text-xs md:text-sm font-semibold">Save to Device</span>
+                <svg className="w-4 h-4 md:w-5 md:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                </svg>
+              </div>
+            </div>
+            
+            <div className="text-purple-300 group-hover:text-purple-500 transition-colors">
+              <svg className="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+            </div>
+          </div>
+        </motion.button>
+      </div>
+
+      {/* Additional Info */}
+      <div className="text-center pt-8 md:pt-12 mt-8 md:mt-12 border-t border-gray-200">
+        <p className="text-sm md:text-base text-gray-600 font-medium">
+          Includes: Financial projections, legal documents, site plans, and community guidelines
+        </p>
+      </div>
+    </div>
+  </div>
+</motion.div>
 
         {/* Comparison Section - Matching About page style */}
         <motion.div
