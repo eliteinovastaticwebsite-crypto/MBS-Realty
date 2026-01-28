@@ -228,6 +228,7 @@ export default function About() {
                       <div className="w-12 h-12 md:w-16 md:h-16 bg-gradient-to-r from-blue-500 to-purple-500 rounded-xl md:rounded-2xl flex items-center justify-center flex-shrink-0">
                         <BuildingOfficeIcon className="w-6 h-6 md:w-8 md:h-8 text-white" />
                       </div>
+                      
                       <div className="flex-1 w-full">
                         <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 leading-tight">
                           ABOUT MBS REALTY
@@ -258,6 +259,44 @@ export default function About() {
                           <p className="text-lg sm:text-xl md:text-2xl font-black text-gray-900 italic">
                             "Our philosophy is simple: <span className="text-blue-600">Excellence through Quality</span>"
                           </p>
+                        </div>
+                      </div>
+
+                      {/* Our Legacy of Excellence Section */}
+                      <div className="p-4 sm:p-6 md:p-8 bg-gradient-to-br from-indigo-50/80 to-purple-50/80 rounded-xl md:rounded-2xl border-2 border-indigo-200/50 shadow-lg">
+                        <div className="flex items-center gap-3 md:gap-4 mb-6">
+                          <div className="bg-indigo-600 text-white p-3 md:p-4 rounded-xl shadow-lg">
+                            <BuildingOfficeIcon className="w-6 h-6 md:w-8 md:h-8" />
+                          </div>
+                          <h3 className="text-2xl sm:text-3xl md:text-4xl font-black text-gray-900">
+                            Our Legacy of Excellence
+                          </h3>
+                        </div>
+
+                        <div className="space-y-4 md:space-y-5">
+                          <p className="text-gray-800 text-base sm:text-lg md:text-xl leading-relaxed">
+                            <span className="font-bold text-gray-900">MBS Realty</span> stands as a premier full-service real estate powerhouse,
+                            offering comprehensive solutions in Sales, Investment Opportunities,
+                            Market Analysis, Corporate Services, and Property Management across
+                            Tamil Nadu.
+                          </p>
+
+                          <p className="text-gray-800 text-base sm:text-lg md:text-xl leading-relaxed">
+                            With <span className="text-indigo-600 font-bold text-xl md:text-2xl">20+ years of excellence</span>, we've served diverse clients ranging from
+                            individual home seekers to large corporate entities and industrial pioneers.
+                            Our success is built on a foundation of trust, expertise, and unwavering
+                            commitment to client satisfaction.
+                          </p>
+
+                          <div className="bg-white/70 rounded-xl md:rounded-2xl p-4 md:p-6 border-l-4 border-indigo-600 shadow-md mt-6">
+                            <p className="text-gray-800 text-base sm:text-lg md:text-xl italic mb-3 md:mb-4 leading-relaxed">
+                              "Our vision is to redefine real estate experiences through innovation,
+                              integrity, and exceptional service that exceeds expectations."
+                            </p>
+                            <p className="text-indigo-600 font-bold text-lg md:text-xl">
+                              — Mr R. MAHALINGAM, Founder & CEO
+                            </p>
+                          </div>
                         </div>
                       </div>
 
